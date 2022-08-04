@@ -13,6 +13,7 @@ type templateData struct {
 	Snippet     *models.Snippet
 	Snippets    []*models.Snippet
 	Form        any
+	Flash       string
 }
 
 // humanDate() converts UTC time to a more human-friendly format
