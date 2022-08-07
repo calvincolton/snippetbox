@@ -15,6 +15,7 @@ type templateData struct {
 	Form            any
 	Flash           string
 	IsAuthenticated bool
+	CSRFToken       string
 }
 
 // humanDate() converts UTC time to a more human-friendly format
