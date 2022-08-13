@@ -22,6 +22,12 @@ type UserModel struct {
 	DB *sql.DB
 }
 
+type UserModelInterface interface {
+	Insert(name, email, password string) error
+	Authenticate(email, password string) (int, error)
+	Exists(id int) (bool, error)
+}
+
 func (m *UserModel) Insert(name, email, password string) error {
 	// 12 is a magic number which indicates the cost (represented by an integer between 4 and 31)
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(password), 12)
